@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+// 1 - aqui:
+apply plugin: 'groovy'
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+
+
+        // 2 - aqui
+        classpath 'org.codehaus.groovy:groovy-android-gradle-plugin:2.0.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+// 3 - aqui, comentar:
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}

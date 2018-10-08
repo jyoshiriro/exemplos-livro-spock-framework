@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file:///media/todos/yoshiriro/home/yoshiriro/workspaces/livro-spock/jose-yoshiriro/exemplo-android/app/app.iml" filepath="/media/todos/yoshiriro/home/yoshiriro/workspaces/livro-spock/jose-yoshiriro/exemplo-android/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exemplo-android.iml" filepath="$PROJECT_DIR$/exemplo-android.iml" />
+      <module fileurl="file:///media/todos/yoshiriro/home/yoshiriro/workspaces/livro-spock/jose-yoshiriro/exemplo-android/exemplo-android.iml" filepath="/media/todos/yoshiriro/home/yoshiriro/workspaces/livro-spock/jose-yoshiriro/exemplo-android/exemplo-android.iml" />
+    </modules>
+  </component>
+</project>
