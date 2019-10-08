@@ -4,6 +4,10 @@ class Fabricante {
 
     // atributos
     // métodos
+	
+	static void main(args) {
+		println 'oooo'
+	}
 
  }
 

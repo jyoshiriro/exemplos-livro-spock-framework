@@ -9,7 +9,7 @@ import spock.lang.Specification
 class CalculadoraImcTest extends Specification {
 
 	
-	def 'deveria ser um homem acima do peso'() {
+	def 'deve ser um homem acima do peso'() {
 		given:
 		def pedido = Mock(PedidoImc)
 		
@@ -43,7 +43,7 @@ class CalculadoraImcTest extends Specification {
 		!resultado.imc
 	}
 	
-	def 'deveria calcular somente quando possível'() {
+	def 'deve calcular somente quando possível'() {
 		given:
 		def pedido1 = Mock(PedidoImc)
 		def pedido2 = Mock(PedidoImc)

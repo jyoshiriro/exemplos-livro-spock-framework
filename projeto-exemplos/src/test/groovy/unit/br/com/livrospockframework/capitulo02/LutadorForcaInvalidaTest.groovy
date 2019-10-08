@@ -6,7 +6,7 @@ import spock.lang.Specification
 
 class LutadorForcaInvalidaTest extends Specification {
 
-	def 'deveria ocorrer exceção para força inválida'() {
+	def 'deve ocorrer exceção para força inválida'() {
 		when:
 		new Lutador(0)
 
@@ -22,7 +22,7 @@ class LutadorForcaInvalidaTest extends Specification {
 	}
 	
 	
-	def 'deveria ocorrer exceção com mensagem específica para força inválida'() {
+	def 'deve ocorrer exceção com mensagem específica para força inválida'() {
 		given:
 		def vidaZero = 0.0
 		

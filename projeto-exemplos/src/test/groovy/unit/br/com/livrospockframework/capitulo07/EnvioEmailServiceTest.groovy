@@ -21,7 +21,7 @@ class EnvioEmailServiceTest extends Specification {
 		this.service = new EnvioEmailService(this.email)
 	}
 	
-	def 'deveria lançar erro de autenticação'() {
+	def 'deve lançar erro de autenticação'() {
 		given:
 		def msgErro = 'Falha de autenticação! Sorry :('
 		
@@ -40,7 +40,7 @@ class EnvioEmailServiceTest extends Specification {
 		!this.service.enviados
 	}
 	
-	def 'deveria lançar erro de conexão'() {
+	def 'deve lançar erro de conexão'() {
 		given: 
 		def servidor = 'teste.com'
 		def porta = 7777

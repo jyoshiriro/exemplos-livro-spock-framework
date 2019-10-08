@@ -5,12 +5,12 @@ import spock.lang.Specification
 
 class LutadorV2GroovyGettersTest extends Specification {
 
-	def 'deveria criar um Lutador com a vida inicial padrão e'() {
+	def 'deve criar um Lutador com a vida inicial padrão e'() {
 		expect:
 		new Lutador(1).vida != 0
 	}
 
-	def 'deveria criar um Lutador com a vida inicial padrão w-t'() {
+	def 'deve criar um Lutador com a vida inicial padrão w-t'() {
 		when:
 		def lutador = new Lutador(1)
 
@@ -18,7 +18,7 @@ class LutadorV2GroovyGettersTest extends Specification {
 		lutador.vida != 0
 	}
 
-	def 'deveria aplicar golpe com a força certa'() {
+	def 'deve aplicar golpe com a força certa'() {
 		given:
 		def forca = 20
 
@@ -29,7 +29,7 @@ class LutadorV2GroovyGettersTest extends Specification {
 		lutador.aplicarGolpe() == forca
 	}
 
-	def 'deveria informar que lutador está nocauteado'() {
+	def 'deve informar que lutador está nocauteado'() {
 		given:
 		def lutador = new Lutador(1)
 
@@ -40,7 +40,7 @@ class LutadorV2GroovyGettersTest extends Specification {
 		lutador.nocauteado
 	}
 
-	def 'deveria informar que lutador não está nocauteado'() {
+	def 'deve informar que lutador não está nocauteado'() {
 		given:
 		def lutador = new Lutador(1)
 
@@ -51,7 +51,7 @@ class LutadorV2GroovyGettersTest extends Specification {
 		!lutador.nocauteado
 	}
 
-	def 'deveria reduzir a vida após receber golpe'() {
+	def 'deve reduzir a vida após receber golpe'() {
 		given:
 		def lutador = new Lutador(1)
 		def vidaAntesGolpe = lutador.vida
@@ -65,7 +65,7 @@ class LutadorV2GroovyGettersTest extends Specification {
 		lutador.vida == vidaAposGolpe
 	}
 
-	def 'deveria ficar com a vida até 0 no minimo'() {
+	def 'deve ficar com a vida até 0 no minimo'() {
 		given:
 		def lutador = new Lutador(1)
 

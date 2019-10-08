@@ -27,7 +27,7 @@ class ImcApiPostTest extends Specification {
 		this.cliente = new RESTClient(this.urlBase, ContentType.JSON)
 	}
 
-	def 'deveria calcular e registrar IMC'() {
+	def 'deve calcular e registrar IMC'() {
 		given:
 		System.setProperty("api-token", "a5e61b00-db1f-406b-a344-9d6b3a5bc536")
 		def pedido = this.criarPedido() 
@@ -51,7 +51,7 @@ class ImcApiPostTest extends Specification {
 		
 	}
 	
-	def 'deveria receber 400 ao tentar criar IMC com JSON ausente ou inválido'() {
+	def 'deve receber 400 ao tentar criar IMC com JSON ausente ou inválido'() {
 		when: 'Requisição sem JSON no corpo'
 		this.cliente.post(path: this.uriEndpoint, headers: this.criarHeader())
 
@@ -69,7 +69,7 @@ class ImcApiPostTest extends Specification {
 		ex.statusCode == HttpStatus.SC_BAD_REQUEST
 	}
 	
-	def 'deveria receber 405 ao tentar usar PUT ao invés de POST no cálculo de IMC'() {
+	def 'deve receber 405 ao tentar usar PUT ao invés de POST no cálculo de IMC'() {
 		when:
 		this.cliente.put(path: this.uriEndpoint, headers: this.criarHeader(), body: this.criarPedido())
 
@@ -78,7 +78,7 @@ class ImcApiPostTest extends Specification {
 		ex.statusCode == HttpStatus.SC_METHOD_NOT_ALLOWED
 	}
 
-	def 'deveria receber 401 ao tentar calcular IMC sem informar a chave da API'() {
+	def 'deve receber 401 ao tentar calcular IMC sem informar a chave da API'() {
 		when:
 		this.cliente.post(path: this.uriEndpoint, body: this.criarPedido())
 
@@ -87,7 +87,7 @@ class ImcApiPostTest extends Specification {
 		ex.statusCode == HttpStatus.SC_UNAUTHORIZED
 	}
 
-	def 'deveria receber 403 ao tentar calcular IMC informando uma chave da API inválida'() {
+	def 'deve receber 403 ao tentar calcular IMC informando uma chave da API inválida'() {
 		when:
 		this.cliente.post(path: this.uriEndpoint,
 				headers : ['x-api-key' : 'chave-INVALIDA'],

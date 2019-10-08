@@ -22,7 +22,7 @@ class ImcApiGetListaTest extends Specification {
 		this.cliente = new RESTClient(this.urlBase, ContentType.JSON)
 	}
 
-	def 'deveria recuperar lista de todos os IMCs'() { 
+	def 'deve recuperar lista de todos os IMCs'() { 
 		
 		when:
 		HttpResponse response = this.cliente.get(path: this.uriEndpoint, headers: this.criarHeader())
@@ -42,7 +42,7 @@ class ImcApiGetListaTest extends Specification {
 		
 	}
 	
-	def 'deveria filtrar corretamente os IMCs'() { 
+	def 'deve filtrar corretamente os IMCs'() { 
 		
 		when: 'Somente parâmetro "apartir" impossível de existir'
 		HttpResponse response = this.cliente.get(path: this.uriEndpoint, 
@@ -88,7 +88,7 @@ class ImcApiGetListaTest extends Specification {
 					
 	}
 
-	def 'deveria receber 401 ao tentar recuperar IMCs sem informar a chave da API'() {
+	def 'deve receber 401 ao tentar recuperar IMCs sem informar a chave da API'() {
 		when:
 		this.cliente.get(path: this.uriEndpoint,
 			query: [apartir: Integer.MIN_VALUE, ate: Integer.MAX_VALUE])
@@ -98,7 +98,7 @@ class ImcApiGetListaTest extends Specification {
 		ex.statusCode == HttpStatus.SC_UNAUTHORIZED
 	}
 
-	def 'deveria receber 403 ao tentar recuperar IMCs informando uma chave da API inválida'() {
+	def 'deve receber 403 ao tentar recuperar IMCs informando uma chave da API inválida'() {
 		when:
 		this.cliente.get(path: this.uriEndpoint, headers : ['x-api-key' : 'chave-INVALIDA'],
 			query: [apartir: Integer.MIN_VALUE, ate: Integer.MAX_VALUE])

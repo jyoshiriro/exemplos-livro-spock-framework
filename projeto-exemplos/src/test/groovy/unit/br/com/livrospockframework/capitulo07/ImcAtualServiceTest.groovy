@@ -36,14 +36,14 @@ class ImcAtualServiceTest extends Specification {
 		this.service = new ImcAtualService(entityManager:this.entityManager)
 	}
 
-	def 'deveria retornar null ou o ImcAtual por nome'() {
+	def 'deve retornar null ou o ImcAtual por nome'() {
 		expect:
 		!this.service.imcExistente(this.nomeNaoEncontrado1)
 		!this.service.imcExistente(this.nomeNaoEncontrado2)
 		this.service.imcExistente(this.nomeEncontrado)?.getNome() == this.nomeEncontrado
 	}
 
-	def 'deveria inserir somente se ainda não existe'() {
+	def 'deve inserir somente se ainda não existe'() {
 		when:
 		def resultadosE2 = [
 			new ResultadoImc(nome:nomeEncontrado, imc: 25),
@@ -66,7 +66,7 @@ class ImcAtualServiceTest extends Specification {
 		this.service.registrarImc(resultadosE0) == 0
 	}
 
-	def 'deveria criar somente como novo por nome'() {
+	def 'deve criar somente como novo por nome'() {
 		given:
 		def resultados = [
 			new ResultadoImc(nome:nomeEncontrado, imc: 25),
